@@ -52,13 +52,13 @@ void z4() {
     scanf("%d", &n); 
 
     while (brojac < n) {
-        printf("Unesite broj: ", brojac+1); 
+        printf("Unesite broj %d: ", brojac + 1); 
         scanf("%f", &x);
         suma += x; brojac += 1; 
     }
-    printf("Srednja vrednost ovih brojeva je %f\n", suma / n); 
+    printf("Srednja vrednost ovih brojeva je %.2f\n", suma / n); 
 }
 
 int main() {
-    z4(); 
+    z1(); z2(); z3(); z4();
 }
