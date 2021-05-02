@@ -1,18 +1,16 @@
-﻿// vezba5.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+﻿#include <math.h>
 #include <stdio.h>
+#include <cmath>
 
 void z1() { 
-	// izracunavanje n! (faktorijel) primenom do while strukture 
+	/* izracunavanje n! (faktorijel) primenom do while strukture */
 
 	int i, fak; 
 	long n; 
 	i = 1; n = 1;
 	printf("Izracunavanje n! \n Unesite broj: "); scanf("%d", &fak); 
 
-	do { 
-		// prva iteracija se izvrsava bez provere uslova 
+	do { // prva iteracija se izvrsava bez provere uslova 
 		n *= i; 
 		i++; 
 	} while (i <= fak); 
@@ -41,7 +39,7 @@ void z2() {
 		}  // kraj switch
 	}
 	printf("Broj samoglasnika: A E I O U \n"); 
-	printf("\t %4d %4d %4d %4d \n", a_ct, e_ct, i_ct, o_ct, u_ct); 
+	printf("\t %4d %4d %4d %4d %4d\n", a_ct, e_ct, i_ct, o_ct, u_ct); 
 	printf("Broj suglasnika: %d \n ", ostalo); 
 }
 
@@ -67,7 +65,7 @@ void z3() {
 }
 
 void z4() { 
-	// for petlja i do while petlja se mogu transformisati u while petlju
+	/* for petlja i do while petlja se mogu transformisati u while petlju */
 
 	int i = 1; int z = 0; 
 	do { 
@@ -85,26 +83,73 @@ void z4() {
 }
 
 void z5() {
-	printf("\n 1 - Program matematika \n 2 - Program finansija \n 3 - Program zabave \n 4 - Exit \n");
+	/* meni selekcije. Korisnik unosi broj od 1 do 4. 
+	Nakon unosa program stampa ime odabrane opcije i nudi mogucnost za novi izbor sve dok se ne izabere opcija 4. (exit)*/
+
+	printf("\n 1 - Program matematika \n 2 - Program finansija \n 3 - Program zabave \n 4 - Exit \n"); // stampanje ponudjenih opcija 
 	int sel;
-	while ((sel = getchar()) != '4') {
+	while ((sel = getchar()) != '4') { // petlja se ponavlja sve dok se ne unese karakter '4'.
 		
 		switch (sel) {
 		case '1': printf("Program matematika");  continue;
 		case '2': printf("Program finansija");  continue;
 		case '3': printf("Program zabave");  continue;
 		}
-	printf("\n 1 - Program matematika \n 2 - Program finansija \n 3 - Program zabave \n 4 - Exit \n");
+	printf("\n 1 - Program matematika \n 2 - Program finansija \n 3 - Program zabave \n 4 - Exit \n"); // ponovno stampanje ponudjenih opcija nakon sto je izabrana jedna od opcija 1-3
 	}
 }
 
 void z6() {
-	int n = 10; int i; int broj;
-	for (i = 2; i < broj; i++); 
-		if (broj % i == 0); 
+	/* program koji ispisuje sve brojeve < n koji su prosti.
+	Broj je prost ukoliko je deljiv samo sa 1 i sa samim sobom. */
 
+	int n; int broj = 2; int i; bool prost;
+
+	printf("Unesi n: "); scanf("%d", &n); // unos n 
+
+	// for (broj = 2; broj < n; broj++) { 
+	while (broj < n) { // petlja se ponavlja sve dok je uneti broj manji od n
+
+		prost = true; // pretpostavka da je uneti broj prost
+
+		for (i = 2; i < broj; i++) {
+			if (broj % i == 0) { // provera da li je broj deljiv bilo kojim brojem osim 1 i samim sobom, ako jeste, broj nije prost
+				prost = false;
+			}
+		}
+		if (prost == true) // ako je broj prost, stampaj taj broj
+			printf("%d ", broj);
+		broj++; // iteracija broja 
+	}
 }
 
-int main() { 
-	z5(); 
+int z7() {
+	/*
+	OUTPUT 
+
+	sa break naredbom: 
+	TEST 
+	0 2 0 5
+	
+	bez break naredbe: 
+	TEST 
+	0 2 0 0 5 0
+
+	kada se ukloni break naredba, switch case nastavlja da proverava dalje slucajeve cak i kada dodje do poklapanja u datom slucaju, 
+	tako stize do 'default' slucaja koji bezuslovno stampa nulu, zato se posle svakog case 1 ili 2 slusaja stampa i dodatna nula.	
+	*/
+	printf("TEST \n"); 
+	int i; 
+	for (i = 0; i < 5; i++) { 
+		switch (i % 3) { 
+		case 2: printf("%d ", i++); // break;
+		case 1: printf("%d ", ++i); // break;
+		default: printf("%d ", 0); // break; 
+		}
+	}
+	return 0; 
+}
+
+int main() {
+	z7(); 
 }
