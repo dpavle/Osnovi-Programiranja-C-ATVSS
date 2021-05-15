@@ -95,6 +95,7 @@ float hipotenuza() {
 }
 
 void promeni(int *xp, int *yp) {
+	/* funkcija za zamenu vrednosti dve brojcane promenljive*/
 	int temp;
 	printf("U funk. originalne vrednosti su: u = %d, v = %d \n", *xp, *yp);
 	temp = *xp; *xp = *yp; *yp = temp;
