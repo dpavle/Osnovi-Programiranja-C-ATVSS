@@ -22,9 +22,9 @@ void z2() {
 	int a_ct, e_ct, i_ct, o_ct, u_ct, ostalo; 
 	a_ct = e_ct = i_ct = o_ct = u_ct = ostalo = 0;
 	printf("Unesi tvoje ime i prezime, # za izlaz. \n"); 
-	while ((ch = getchar()) != '#') 
+	while ((ch = getchar()) != '#') // petlja se ponavlja dok se ne unese karakter '#' 
 	{ 
-		switch (ch) {
+		switch (ch) { // a e i o u - traze se samoglasnici u unosu (velika i mala slova) 
 			case 'a': a_ct++; break;
 			case 'A': a_ct++; break;
 			case 'e': e_ct++; break;
@@ -35,7 +35,7 @@ void z2() {
 			case 'O': o_ct++; break;
 			case 'u': u_ct++; break;
 			case 'U': u_ct++; break;
-			default: ostalo++; break;
+			default: ostalo++; break; // ako nema samoglasnika, inkrementira se vrednost ostalo, tj. broj suglasnika 
 		}  // kraj switch
 	}
 	printf("Broj samoglasnika: A E I O U \n"); 
@@ -56,7 +56,6 @@ void z3() {
 	int d1 = r1 * b2 * c3 + r2 * b3 * c1 + r3 * b1 * c2 - c1 * b2 * r3 - c2 * b3 * r1 - c3 * b1 * r2; 
 	int d2 = a1 * r2 * c3 + a2 * r3 * c1 + a3 * r1 * c2 - c1 * r2 * a3 - c2 * r3 * a1 - c3 * r1 * a2; 
 	int d3 = a1 * b2 * r3 + a2 * b3 * r1 + a3 * b1 * r2 - r1 * b2 * a3 - r2 * b3 * a1 - r3 * b1 * a2;
-
 
 	x1 = d1 / d; x2 = d2 / d; x3 = d3 / d;
 

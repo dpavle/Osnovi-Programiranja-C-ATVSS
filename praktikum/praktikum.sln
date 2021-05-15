@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vezba5", "vezba5\vezba5.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vezba6", "vezba6\vezba6.vcxproj", "{32087134-E876-4CE0-9809-72910B4DF11E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vezba7", "vezba7\vezba7.vcxproj", "{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{32087134-E876-4CE0-9809-72910B4DF11E}.Release|x64.Build.0 = Release|x64
 		{32087134-E876-4CE0-9809-72910B4DF11E}.Release|x86.ActiveCfg = Release|Win32
 		{32087134-E876-4CE0-9809-72910B4DF11E}.Release|x86.Build.0 = Release|Win32
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Debug|x64.ActiveCfg = Debug|x64
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Debug|x64.Build.0 = Debug|x64
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Debug|x86.ActiveCfg = Debug|Win32
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Debug|x86.Build.0 = Debug|Win32
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Release|x64.ActiveCfg = Release|x64
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Release|x64.Build.0 = Release|x64
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Release|x86.ActiveCfg = Release|Win32
+		{7BFBA17B-1CC6-4F1A-834F-61DA7912AE73}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
