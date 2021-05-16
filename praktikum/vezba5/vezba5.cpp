@@ -2,22 +2,25 @@
 #include <stdio.h>
 #include <cmath>
 
-void z1() { 
+void z1() {
 	/* izracunavanje n! (faktorijel) primenom do while strukture */
 
-	int i, fak; 
-	long n; 
+	int i, fak;
+	long n;
 	i = 1; n = 1;
-	printf("Izracunavanje n! \n Unesite broj: "); scanf("%d", &fak); 
+	printf("Izracunavanje n! \n Unesite broj: "); scanf("%d", &fak);
 
 	do { // prva iteracija se izvrsava bez provere uslova 
-		n *= i; 
-		i++; 
-	} while (i <= fak); 
-	printf("%d! = %ld \n", fak, n); 
-}
-
+		n *= i;
+		i++;
+	} while (i <= fak);
+	printf("%d! = %ld \n", fak, n);
+} 
 void z2() {
+	/* primer programa u kome se koristi naredba break u kombinaciji
+	sa naredbom switch za izracunavanje broja samoglasnika u delu 
+	proizvoljnog teksta */
+
 	char ch; 
 	int a_ct, e_ct, i_ct, o_ct, u_ct, ostalo; 
 	a_ct = e_ct = i_ct = o_ct = u_ct = ostalo = 0;

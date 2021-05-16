@@ -1,8 +1,9 @@
 ﻿
 #include <stdio.h>
 
-void z1()
-{
+void z1() {
+    /* program za prikaz neparnih brojeva manjih ili jednakih 20 */
+
     int i, n, a; // Deklaracija promenljivih, i - brojac, n - broj brojeva, a - vrednosti brojeva
     printf("Unesite broj brojeva: "); // Unos broja brojeva za ispitivanje
     scanf("%d", &n); 
@@ -20,6 +21,9 @@ void z1()
 }
 
 void z2() {
+    /* program za izracunavanje zbira celih brojeva upotrebom while petlje
+    izracunavanje se prekida kada se unese '0' */
+
     long sum = 0L; 
     int num; 
     printf("Unesite broj za sumiranje ili 0 za izlaz!\n");
@@ -35,6 +39,9 @@ void z2() {
 
 
 void z3() {
+    /* program za permutovanje cifara celog broja koriscenjem while naredba
+    (npr. 54321 u 12345) */
+
     int x; 
     printf("Unesite ulazni broj: "); 
     scanf("%d", &x); // Unos broja 
@@ -46,6 +53,9 @@ void z3() {
 }
 
 void z4() {
+    /* program za odredjivanje srednje vrednosti n realnih pozitivnih brojeva
+    pomocu while petlje */
+
     int n, brojac=0;
     float suma = 0, x; 
     printf("Unesite broj brojeva: "); 
