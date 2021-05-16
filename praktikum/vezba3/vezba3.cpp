@@ -4,7 +4,12 @@
 #include <math.h>
 
 void z1() { 
-	// provera vrste unetog karaktera 'c'
+	/* logicki izraz kojim se proverava da li je uneti karakter 'c': 
+	Malo slovo (Answer:  c >= ’a’ && c <= ’z’ )
+	Veliko slovo(Answer:  c >= ’A’ && c <= ’Z’ )
+	cifra (Answer:  c >= ’0’ && c <= ’9’ )
+	beli znak (ukljucujuci blanko, tab i novi red) 
+	(Answer:  c == ’\n’ || c== ’\t’ || c == ’’ ) */
 
 	char c;
 	scanf("%c", &c);
@@ -58,7 +63,8 @@ void z3() {
 
 
 void z4() { 
-	// program za resavanje kvadratne jednacine x^2 + x -2 = 0, po jednacini x1,2=-b+sqrt(b^2-4ac)/2a
+	/* program za resavanje kvadratne jednacine x^2 + x -2 = 0,
+	po jednacini x1,2 = -b + sqrt(b^2 - 4ac) / 2a */
 
 	double a, b, c;
 	double x1, x2, pom; 
@@ -77,7 +83,8 @@ void z4() {
 }
 
 void z5() {
-	// program za resavanje proizvoljne kvadratne jednacine, po jednacini x1,2=-b+sqrt(b^2-4ac)/2a
+	/* program za resavanje proizvoljne kvadratne jednacine, 
+	po jednacini x1,2 = -b + sqrt(b^2 - 4ac) / 2a */
 
 	double a, b, c;
 	double x1, x2, pom;
@@ -97,6 +104,39 @@ void z5() {
 	printf("Vrednost drugog korena x2: %f \n", x2);
 }
 
+void z6() {
+	/* program za izracunavanje ukamacene vrednosti ako je 
+	poznata kamatna stopa, period orocavanja u mesecima i iznos glavnice
+	kamata se racuna kao glavnica * (1 + kamata/100)^period */ 
+
+	double stopa, period, glavnica; 
+	printf("Unesite mesecnu kamatnu stopu: "); scanf("%lf", &stopa); // ulaz u pokretnom zarezu 
+	stopa = stopa / 100.0; // konverzija u procente 
+	printf("Unesite glavnicu: "); scanf("%lf", &glavnica); 
+	printf("Unesive vreme orocavanja u mesecima: "); scanf("%lf", &period); 
+	
+	printf("Ukamacena vrednost je %.2f\n", glavnica * pow( (1.0 + stopa), period) );
+}
+
+void z7() {
+	/* program kojim se izracunava vrednost funkcije: 
+		  x, x < 2
+	y = { 2, 2 <= x < 3 
+		  x-1, x>= 3	  */
+
+	int x, y; 
+	scanf("%d", &x); 
+
+	if (x < 2) {
+		y = x; }
+	else if (x>= 2 && x < 3) {
+		y = 2; }
+	else if (x >= 3) {
+		y = x - 1; }
+
+	printf("Vrednost funkcije y = %d", y); 
+}
+
 void main() {
-	z5();  
+	z7();  
 }
