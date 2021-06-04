@@ -1,5 +1,6 @@
 ﻿
 #include <stdio.h>
+#include <math.h>
 
 void z1() {
     /* program za prikaz neparnih brojeva manjih ili jednakih 20 */
@@ -69,6 +70,44 @@ void z4() {
     printf("Srednja vrednost ovih brojeva je %.2f\n", suma / n); 
 }
 
+
+void z7() {
+    /* program koji cifre nekog proizvoljno unetog broja rotira za k pozicija u desno */
+
+    int k, broj, brojac = 0, brojTemp, c;
+
+    printf("Unesite 'k': "); scanf("%d", &k);
+    printf("Unesite broj: "); scanf("%d", &broj);
+
+    brojTemp = broj;
+
+    while (brojTemp > 0) // izvlacenje ukupnog broja cifara broja 
+    {
+        brojac++;
+        brojTemp = brojTemp / 10;
+    }
+    for (int i = 0; i < k % brojac; i++) // rotiranje cifara 
+    {
+        c = broj % 10;
+        broj = broj / 10;
+        broj = broj + c * pow(10, brojac - 1);
+    }
+    printf("%d", broj);
+}
+
+
+void z8() {
+    int n, c, zk = 0; // zk - zbir kvadrata, c - cifra
+    printf("Unesite broj 'n': "); scanf("%d", &n);
+
+    while (n > 0) {
+        c = n % 10; // izvlacenje cifara broja 
+        zk = zk + (pow(c, 2)); // zbir kvadrata 
+        n = n / 10;
+    }
+    printf("%d", zk);
+}
+
 int main() {
-    z1(); z2(); z3(); z4();
+   z1(); z2(); z3(); z4(); z7(); z8();
 }
